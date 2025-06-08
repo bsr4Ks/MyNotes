@@ -10,10 +10,11 @@
 <body>
     <header>
         <h1>MyNotes</h1>
-        {% if session.username %}
-        <p>Welcome, {{ session.username }} | <a href="{{ url_for('logout') }}">Log Out</a></p>
+        {% if current_user.is_authenticated %}
+        <p>Welcome, {{ current_user.username }} | <a href="{{ url_for('logout') }}">Log Out</a></p>
         {% endif %}
     </header>
+
     <main>
         {% block content %}{% endblock %}
     </main>
