@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MyNotes | {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
+</head>
+
+<body>
+    <header>
+        <h1>MyNotes</h1>
+        {% if session.username %}
+        <p>Welcome, {{ session.username }} | <a href="{{ url_for('logout') }}">Log Out</a></p>
+        {% endif %}
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+
+</html>

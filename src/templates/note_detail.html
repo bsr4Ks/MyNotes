@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block title %}Note Detail{% endblock %}
+{% block content %}
+<h2>{{ note.title }}</h2>
+<p><strong>Date:</strong> {{ note.created_at.strftime("%d.%m.%Y %H:%M") }}</p>
+<p>{{ note.content }}</p>
+
+<!-- Delete and Update Buttons -->
+<p>
+  <a href="{{ url_for('notes') }}">← Back to Notes</a>
+</p>
+<p>
+  <a href="{{ url_for('delete_note', note_id=note.id) }}" onclick="return confirm('Are you sure you want to delete the note?');" class="btn btn-danger">🗑️ Delete</a>
+</p>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block title %}Notes{% endblock %}
+{% block content %}
+<h2>My Notes</h2>
+<p><a href="{{ url_for('new_note') }}">Add New Note</a></p>
+<ul>
+    {% for note in notes %}
+    <li>
+        <a href="{{ url_for('note_detail', note_id=note.id) }}">{{ note.title }} - {{ note.created_at.strftime("%d.%m.%Y %H:%M") }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
