@@ -1,4 +1,4 @@
-github: 
+github: https://github.com/bsr4Ks/MyNotes.git
 name: Başar Sadettin Aksu
 e-mail: basaraksu03@gmail.com
 DNI: U36322628
